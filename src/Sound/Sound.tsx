@@ -6,6 +6,8 @@ type Props = {
 
 soundPath: string
 
+soundCaption : string;
+
 }
 
 const Sound = (props: Props) => {
@@ -15,7 +17,7 @@ const Sound = (props: Props) => {
     const [playbackRate, SetRate] = useState(1.0);
     const [Playing, SetPlaying]  = useState(false);
 
-    const [play, {stop}] = useSound(props.soundPath,{id:props.soundPath, volume, playbackRate, soundEnabled: true, interrupt: true});
+    const [play, {stop}] = useSound(props.soundPath,{ volume, playbackRate, soundEnabled: true, interrupt: true, loop: true});
    
     
     const Click = ()=>{
@@ -45,7 +47,7 @@ const Sound = (props: Props) => {
     }
 
     return <>
-
+    <label>{props.soundCaption}</label>
     <button onClick={()=>Click()}> {PlayStopLabel()}</button>
     <RangeClider OnChange={(e)=>{SetVolume(e ??0)}}></RangeClider>
 

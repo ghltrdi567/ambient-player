@@ -3,16 +3,26 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Sound from './Sound/Sound'
-import { RisingPitch } from './Sound/test'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      
-        <Sound soundPath='../../sounds/test.flac'/>
-        <Sound soundPath='../../sounds/test.mp3'/>
+      <div>
+      <Sound soundPath='../../sounds/test.flac' soundCaption='монетка'/>
+     
+      </div>
+        
+        <div>
+        <Sound soundPath='../../sounds/test.mp3' soundCaption="Пули"/>
+        </div>
+
+        <div>
+        <Sound soundPath='../../sounds/loop.wav' soundCaption='storm'/>
+        </div>
+        
+        
        
     </>
   )
