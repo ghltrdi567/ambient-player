@@ -1,4 +1,6 @@
 import React, { ChangeEventHandler, useState } from 'react'
+import  './RangeClider.css'
+import { Range } from 'react-range';
 
 type Props = {
 
@@ -21,11 +23,11 @@ const RangeClider = (props: Props) => {
 
 
   return (
-    <>
+    <div>
+    <p>{inputVal}</p>
+    <input type='range' orient="vertical" min={0} max={100} defaultValue={inputVal} onChange={ChangeHandle} ></input>
     
-    <input type='range' min={0} max={100} defaultValue={inputVal} onChange={ChangeHandle}></input>
-    <span >{inputVal}</span>
-    </>
+    </div>
     
   )
 }

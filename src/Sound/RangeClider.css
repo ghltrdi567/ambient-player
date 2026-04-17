@@ -1,0 +1,6 @@
+input[type="range"][orient="vertical"] {
+    writing-mode: vertical-lr; /* For modern browsers */
+    direction: rtl; /* For modern browsers, ensures value increases upwards */
+    width: 16px; /* Adjust as needed */
+    vertical-align: bottom; /* Prevents layout issues */
+  }

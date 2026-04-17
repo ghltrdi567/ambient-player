@@ -37,6 +37,13 @@
   padding: 2em;
 }
 
+
+.souuds-list {
+  display: flex;
+  flex-direction: row;
+}
+
+
 .read-the-docs {
   color: #888;
 }

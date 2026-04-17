@@ -17,10 +17,25 @@ const Sound = (props: Props) => {
     const [playbackRate, SetRate] = useState(1.0);
     const [Playing, SetPlaying]  = useState(false);
 
-    const [play, {stop}] = useSound(props.soundPath,{ volume, playbackRate, soundEnabled: true, interrupt: true, loop: true});
+    const [play, {stop, sound}] = useSound(props.soundPath,{ volume, playbackRate, soundEnabled: true, interrupt: true, loop: false},);
    
-    
+    useEffect(() => {
+       
+      });
+
     const Click = ()=>{
+
+        //плавное нарастание звука при начале файла
+        if(true){
+            sound.on('play', ()=>{ sound.fade(0.6, 1, 1000)});
+        }
+
+
+        if(true){
+            sound.on('end', ()=>{ SetPlaying(true); play(); });
+        }
+        
+        
 
         if(Playing){
             SetPlaying(false);
@@ -31,9 +46,7 @@ const Sound = (props: Props) => {
             play();
         }
 
-
-
-
+       
     }
 
    
@@ -46,12 +59,13 @@ const Sound = (props: Props) => {
 
     }
 
-    return <>
-    <label>{props.soundCaption}</label>
-    <button onClick={()=>Click()}> {PlayStopLabel()}</button>
+    return <div>
     <RangeClider OnChange={(e)=>{SetVolume(e ??0)}}></RangeClider>
+    <button onClick={()=>Click()}> {PlayStopLabel()}</button>
+    <p>{props.soundCaption}</p>
+    
 
-    </> 
+    </div> 
 
 
 

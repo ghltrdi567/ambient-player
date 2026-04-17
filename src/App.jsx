@@ -9,18 +9,25 @@ function App() {
 
   return (
     <>
-      <div>
+      
+
+      <div className='souuds-list'>
       <Sound soundPath='../../sounds/test.flac' soundCaption='монетка'/>
      
-      </div>
+      
         
-        <div>
-        <Sound soundPath='../../sounds/test.mp3' soundCaption="Пули"/>
-        </div>
+        
+     <Sound soundPath='../../sounds/test.mp3' soundCaption="Пули"/>
+     
 
-        <div>
-        <Sound soundPath='../../sounds/loop.wav' soundCaption='storm'/>
-        </div>
+     
+     <Sound soundPath='../../sounds/loop.wav' soundCaption='storm'/>
+
+
+      </div>
+
+      
+        
         
         
        
